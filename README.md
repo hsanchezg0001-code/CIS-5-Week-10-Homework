@@ -28,9 +28,9 @@ Three small functions that work on one array of scores. Each function receives i
 ## Requirements
 
 - Use the three signatures above exactly
-- `curve` must change main's array. Print the array before and after
-- `minMax` returns nothing. Its answers come back through `int& lo` and `int& hi`
-- `findScore` writes through `*where` only when `where != nullptr`
+- `curve` Takes the array as a decayed pointer to the original memory, adds points to each element in place, and returns nothing.
+- `minMax` Reads the array with const protection and returns two separate outputs directly into main's variables via reference parameters (&lo and &hi).
+- `findScore`Reads the array to search for a target value, returning a boolean status while safely writing the found index through a dereferenced pointer (*where) only when where != nullptr.
 - Pass the size `n` with every array. Do not use `sizeof` inside a function
 - Use `const` on array parameters the function only reads
 - README: one sentence for each function saying how its data gets in and out
